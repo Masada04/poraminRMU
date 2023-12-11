@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+#result {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+ 
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b>RMU</b> PORAMIN</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+          <a href="index.html" class="w3-bar-item w3-button">INDEX</a>
+          <a href="java.html" class="w3-bar-item w3-button">JAVA</a>
+          <a href="api.html" class="w3-bar-item w3-button">API</a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<!-- Navbar (sit on top) -->
+<div class="vg-page page-contact" id="Api">
+  <div class="container-fluid">
+    <div class="text-center wow fadeInUp">
+  <div id="response-message"></div>
+  <h2 class="java-h2">Form Sheet</h2>
+  <div class="java-body">
+      <form class="form-sheet" method="POST"
+          action="https://script.google.com/macros/s/AKfycbyAXRTE7DoNhcNsJiU9xJD6axhko2XZtxo9TC51cE5WKAGy_Nh5vjhzID6tjJ4IzUHB/exec"
+          onsubmit="submitForm(event)">
+          <input name="Email" type="email" placeholder="Email" required>
+          <input name="Name" type="text" placeholder="Name" required>
+          <button class="java-btn" type="submit">Send</button>
+      </form>
+  </div>
+  <br>
+
+  <!-- สร้างปุ่ม Click เพื่อให้ Update ภาพหรือคำจาก API -->
+  <h2 class="java-h2">Nationalize API</h2>
+  <form class="form-sheet" id="nameForm">
+      <label for="name">Enter your name : </label>
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <button class="java-btn" type="button" onclick="fetchNationality()">Submit</button>
+  </form>
+  <div id="result"></div>
+  <br>
+  
+  
+  <br>
+  <div class="row">
+        <h2>Click to get a Random Image</h2>
+        <p>
+          <button onclick="getRandomImage()" fdprocessedid="bsgi2m">Get Random Image</button>
+        </p>
+        <img id="randomImage" src="https://source.unsplash.com/300x300/?random&amp;2" alt="Random Image">
+        <hr>
+  </div>
+
+      <br>
+      <!-- อันนี้ Update ราคา Crypto -->
+  <h2 class="java-h2">Coinbase API</h2>
+  <div id="pricesContainer">
+      <div id="prices"></div>
+      <div id="lastUpdateTime"></div>
+  </div>
+  
+  <!-- API -->
+  <iframe width="100%" height="400" seamless frameborder="0" scrolling="no"
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNJVL0PRcY2Vk2ZrvR_P7IgysXak6lgKD_Wbmnqf2mwVhsrQwTqWXvzTUp4hwd9M0Q-P1GCtNkLdwe/pubchart?oid=1109316691&format=interactive"></iframe>
+
+  <hr>
+  <iframe
+          width="100%"
+          height="600"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNJVL0PRcY2Vk2ZrvR_P7IgysXak6lgKD_Wbmnqf2mwVhsrQwTqWXvzTUp4hwd9M0Q-P1GCtNkLdwe/pubhtml?gid=0&single=true"?gid=0&single=true&amp;single=true&amp;widget=true&amp;headers=false"
+        ></iframe>
+  <hr>
+  <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.3826973541886!2d103.268403474907!3d16.200753684497922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122a6ae121c1c2f%3A0x626cae9fcd86bf3d!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lih4Lir4Liy4Liq4Liy4Lij4LiE4Liy4Lih!5e0!3m2!1sth!2sth!4v1701865340071!5m2!1sth!2sth"
+      width="600" height="450" style="border:0;"   allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</body>
+</html>

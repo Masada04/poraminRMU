@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PoraminRMU</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>RMU</b> PORAMIN</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">INDEX</a>
+      <a href="java.html" class="w3-bar-item w3-button">JAVA</a>
+      <a href="api.html" class="w3-bar-item w3-button">API</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+</script>
+<div class="java-body">
+  <h2 class="java-h2">Just change A - Z</h2>
+  <p id="demo">Hi</p>
+
+  <br>
+  <h2 class="java-h2">Click to change</h2>
+  <p id="demo2">Hi</p>
+  <button class="java-btn" onclick="myFunction()">Click me</button>
+  <br>
+
+  <br>
+  <h2 class="java-h2">Calculate number</h2>
+  <input id="numb">
+  <button class="java-btn" type="button" onclick="myFunction2()">Submit</button>
+  <p id="demo3"></p>
+
+  <br>
+  <div class="java-body">
+      <h2 class="java-h2">หาความยาวเส้นรอบวง</h2>
+      <input id="input" type="text" placeholder="รัศมี" fdprocessedid="1pjfaa" />
+      <button class="java-btn" onclick="calculateAndDisplayCircumference()"
+          fdprocessedid="kjvwr">คำนวน</button>
+      <h4>ความยาวเส้นรอบวงกลม : <span id="result"> </span></h4>
+  </div>
+
+  <div class="java-body">
+      <h2 class="java-h2">หาค่าอุณหภูมิ</h2>
+      <h4 class="java-h4"><span id="show1"></span></h4>
+      <button class="java-btn" onclick="fahrenheitToCelsius()" fdprocessedid="25h2qg">กดปุ่ม</button>
+  </div>
+  <div class="java-body">
+      <h2 class="java-h2">หาค่าวันต่อนาที</h2>
+      <input type="text" id="daysInput" fdprocessedid="1mel0p" />
+      <h4 class="java-h4"><span id="show2"></span></h4>
+      <button class="java-btn" onclick="dayToSeconds()" fdprocessedid="lky1nr">คำนวน</button>
+  </div>
+</div>
+<script>
+  function printAlphabets() {
+    const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let index = 0;
+  
+    function displayAlphabet() {
+      const alphabet = alphabets[index];
+      document.getElementById("demo").innerHTML = alphabet;
+      console.log(alphabet);
+      index = (index + 1) % alphabets.length; // เพิ่ม index และทำการ modulo กับ 26 (จำนวนตัวอักษรในอัลฟาเบ็ต)
+      setTimeout(displayAlphabet, 1000); // 1000 milliseconds = 1 วินาที
+    }
+  
+    displayAlphabet();
+  }
+  
+  printAlphabets();
+  
+  
+  const messages = [
+    "Hello World",
+    "Hello There",
+    "Hello, What's up",
+    "Greetings!",
+    "Hi!",
+    "Hey!"
+  ];
+  let currentIndex = 0;
+
+  function myFunction() {
+    if (currentIndex < messages.length) {
+      let currentMessage = messages[currentIndex];
+      document.getElementById("demo2").innerHTML = currentMessage;
+      currentIndex++;
+    }
+  }
+  
+    function myFunction2() {
+    // Get the value of the input field with id="numb"
+    let x = document.getElementById("numb").value;
+    // If x is Not a Number or less than one or greater than 10
+    let text;
+    if (isNaN(x) || x < 1 || x > 10) {
+      text = "Input not valid";
+    } else {
+      text = "Input OK";
+    }
+    document.getElementById("demo3").innerHTML = text;
+  }
+  function fahrenheitToCelsius() {
+                  let inputFahrenheit = prompt("Enter temperature in Fahrenheit:");
+                  let celsiusValue = (parseFloat(inputFahrenheit) - 32) * (5 / 9);
+                  document.getElementById(
+                      "show1"
+                  ).innerText = `Fahrenheit: ${inputFahrenheit}°F, Celsius: ${celsiusValue.toFixed(
+                2
+              )}°C`;
+              }
+  
+              function calculateCircleCircumference(radius) {
+                  return 2 * Math.PI * radius;
+              }
+  
+              function calculateAndDisplayCircumference() {
+                  let inputElement = document.getElementById("input");
+                  let resultElement = document.getElementById("result");
+  
+                  let radius = parseFloat(inputElement.value);
+  
+                  if (!isNaN(radius)) {
+                      let circumference = calculateCircleCircumference(radius);
+                      resultElement.textContent = circumference.toFixed(2);
+                  } else {
+                      resultElement.textContent = "กรุณากรอกค่าที่ถูกต้อง";
+                  }
+              }       
+              function dayToSeconds() {
+      let inputDays = document.getElementById("daysInput").value;
+      if (!isNaN(inputDays)) {
+          let seconds = inputDays * 86400;
+          document.getElementById("show2").innerText = `จำนวนวัน: ${inputDays} วัน, ${seconds} นาที`;
+      } else {
+          alert("Please enter a valid number of days.");
+      }
+  }
+</script>
+ิ<br>
+<br>
+<br>
+<br>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<canvas id="myChart1" style="width:100%;max-width:600px"></canvas>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = ["Kalasin", "Maha sarakham", "Roi Ed", "Yasothorn", "Nakhon ratchasima"];
+const yValues = [55, 49, 44, 24, 15];
+const barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChart1", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Province of friends in the classroom"
+    }
+  }
+});
+
+</script>
+<br>
+<br>
+<script>
+ 
+  const aValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+  const bValues = [55, 49, 44, 24, 15];
+  const bbarColors = ["red", "green","blue","orange","brown"];
+  
+  new Chart("myChart", {
+    type: "bar",
+    data: {
+      labels: aValues,
+      datasets: [{
+        backgroundColor: bbarColors,
+        data: bValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: "World Wine Production 2018"
+      }
+    }
+  });
+  </script>
+  <style>
+    #myChart {
+    float: right;
+    padding: 70px;
+  }
+  #myChart1{
+    float: left;
+  }
+  footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+  </style>
+
+
+
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  
+
+
+
+
+
+
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
